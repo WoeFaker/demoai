@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Tuto</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- <img src="chat.jpg" alt="caez"> -->
+        <!-- <h1>Tiago's prediction</h1>
+        <p>{{resultat}}</p>
+
+        <h1 class="text-center">Tiago's model interactive</h1>
+        <form  class="p-3 text-center d-flex flex-row justify-content-center min-width-25" action="/", method="post" enctype="multipart/form-data">
+            <input class="form-control text-center w-25"  name="age">
+            <input class="btn btn-primary" type="submit" value="Predict side effect">
+        </form>
+        {% if resultat1 %}
+            <p class="text-center">{{resultat1}}</p>
+        {% endif %} -->
+
+        <h1 class="text-center">Image Classifier</h1>
+
+        <form  class="p-3 text-center d-flex flex-row justify-content-center min-width-25" action="/", method="post" enctype="multipart/form-data">
+            <input class="form-control text-center w-25" type="file" name="imagefile">
+            <input class="btn btn-primary" type="submit" value="Predict image">
+        </form>
+        {% if prediction %}
+            <p class="text-center">The image is a {{prediction}}</p>
+            <img class="rounded mx-auto d-block" src={{yeps}} alt={{yeps}}>
+        {% endif %}
+    </body>
+    <style scoped>
+       
+    </style>
+</html>
