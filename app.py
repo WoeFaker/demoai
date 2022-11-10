@@ -1,7 +1,6 @@
 from email import message
 from flask import Flask, render_template, request, url_for
 
-import os
 
 from keras.utils.image_utils import img_to_array
 from keras.utils.image_utils import load_img
@@ -22,10 +21,10 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.metrics import categorical_crossentropy
 from keras.applications.resnet_v2 import ResNet50V2
 
-IMAGES_FOLDER = os.path.join('images')
+
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = IMAGES_FOLDER
+
 
 model = ResNet50V2()
 model2 = load_model('../.keras/models/medical_trial_model.h5')
