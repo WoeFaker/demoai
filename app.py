@@ -113,11 +113,5 @@ def predict():
 #     return render_template('index.html', resultat1 = message)
 
 
-@app.route('/')
-@app.route('/index')
-def debug():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'chat.jpg')
-    return render_template('index.html', truc = full_filename)
-
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
