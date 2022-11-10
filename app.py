@@ -7,7 +7,7 @@ from keras.utils.image_utils import img_to_array
 from keras.utils.image_utils import load_img
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
-from keras.applications.vgg16 import VGG16
+# from keras.applications.vgg16 import VGG16
 
 from keras.models import load_model
 import numpy as np
@@ -82,7 +82,6 @@ def hello_world():
 def predict():
     imagefile= request.files["imagefile"]
     image_path = "./static/" + imagefile.filename
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'chat.jpg')
     imagefile.save(image_path)
 
     image = load_img(image_path, target_size=(224, 224))
@@ -92,8 +91,6 @@ def predict():
     yhat = model.predict(image)
     label = decode_predictions(yhat)
     label = label[0][0]
-    truc = "." + image_path
-    thing = "chat.jpg"
 
     classification = '%s (%.2f%%)' % (label[1], label[2]*100)
     
