@@ -94,6 +94,7 @@ def predict():
     classification = '%s (%.2f%%)' % (label[1], label[2]*100)
     
     return render_template('index.html', prediction = classification, yeps = image_path)
+    #unicorn and cherry pie for web server
 
 # def predict2():
 #     scaler = MinMaxScaler(feature_range=(0,1))
