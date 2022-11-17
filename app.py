@@ -8,7 +8,7 @@ from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
 # from keras.applications.vgg16 import VGG16
 
-from keras.models import load_model
+# from keras.models import load_model
 import numpy as np
 from random import randint
 from sklearn.utils import shuffle
@@ -27,7 +27,7 @@ app = Flask(__name__)
 
 
 model = ResNet50V2()
-model2 = load_model('../.keras/models/medical_trial_model.h5')
+# model2 = load_model('../.keras/models/medical_trial_model.h5')
 @app.route('/', methods=['GET'])
 def hello_world():
     # train_samples = []
