@@ -23,12 +23,12 @@ from keras.applications.resnet_v2 import ResNet50V2
 
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
 model = ResNet50V2()
 # model2 = load_model('../.keras/models/medical_trial_model.h5')
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def hello_world():
     # train_samples = []
     # train_labels = []
@@ -77,7 +77,7 @@ def hello_world():
     # return render_template('index.html', resultat = rounded_prediction)
     return render_template('index.html')
 
-@app.route('/', methods=['POST'])
+@application.route('/', methods=['POST'])
 def predict():
     imagefile= request.files["imagefile"]
     image_path = "./static/" + imagefile.filename
@@ -111,7 +111,7 @@ def predict():
 #         message = "You will have side effects"
 
 #     return render_template('index.html', resultat1 = message)
-
+# heberger avec son propre pc
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    application.run(port=3000, debug=True)
